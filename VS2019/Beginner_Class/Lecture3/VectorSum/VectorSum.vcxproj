@@ -145,6 +145,10 @@
     <CudaCompile Include="..\..\..\..\Beginner_Class\Lecture3\VectorSum\VectorSum.cu">
       <FileType>Document</FileType>
     </CudaCompile>
+    <CudaCompile Include="..\..\..\..\Beginner_Class\Lecture3\VectorSum\VectorSum_skeleton.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CudaCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Common\DS_timer.cpp" />

@@ -2,6 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <CudaCompile Include="..\..\..\..\Beginner_Class\Lecture3\VectorSum\VectorSum.cu" />
+    <CudaCompile Include="..\..\..\..\Beginner_Class\Lecture3\VectorSum\VectorSum_skeleton.cu" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Common\DS_timer.cpp" />
