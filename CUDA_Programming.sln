@@ -11,16 +11,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Intermediate", "Intermediat
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloCUDA", "VS2019\Beginner_Class\Lecture2\HelloCUDA\HelloCUDA.vcxproj", "{BA53C378-6655-4971-9882-228D1803A0CD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lecture3", "Lecture3", "{7319CF7B-2B59-4D0D-9025-283362C34242}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VectorSum", "VS2019\Beginner_Class\Lecture3\VectorSum\VectorSum.vcxproj", "{F9FFB1CF-216A-4162-8BC3-5486D7CF6E49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BA53C378-6655-4971-9882-228D1803A0CD}.Debug|x64.ActiveCfg = Debug|x64
 		{BA53C378-6655-4971-9882-228D1803A0CD}.Debug|x64.Build.0 = Debug|x64
+		{BA53C378-6655-4971-9882-228D1803A0CD}.Debug|x86.ActiveCfg = Debug|x64
 		{BA53C378-6655-4971-9882-228D1803A0CD}.Release|x64.ActiveCfg = Release|x64
 		{BA53C378-6655-4971-9882-228D1803A0CD}.Release|x64.Build.0 = Release|x64
+		{BA53C378-6655-4971-9882-228D1803A0CD}.Release|x86.ActiveCfg = Release|x64
+		{F9FFB1CF-216A-4162-8BC3-5486D7CF6E49}.Debug|x64.ActiveCfg = Debug|x64
+		{F9FFB1CF-216A-4162-8BC3-5486D7CF6E49}.Debug|x64.Build.0 = Debug|x64
+		{F9FFB1CF-216A-4162-8BC3-5486D7CF6E49}.Debug|x86.ActiveCfg = Debug|Win32
+		{F9FFB1CF-216A-4162-8BC3-5486D7CF6E49}.Debug|x86.Build.0 = Debug|Win32
+		{F9FFB1CF-216A-4162-8BC3-5486D7CF6E49}.Release|x64.ActiveCfg = Release|x64
+		{F9FFB1CF-216A-4162-8BC3-5486D7CF6E49}.Release|x64.Build.0 = Release|x64
+		{F9FFB1CF-216A-4162-8BC3-5486D7CF6E49}.Release|x86.ActiveCfg = Release|Win32
+		{F9FFB1CF-216A-4162-8BC3-5486D7CF6E49}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -28,6 +44,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{02FD3DAC-AA3C-41D8-86FF-8AE05DC5B9F0} = {BBC3837C-5486-4B81-92F4-2ADAE8696667}
 		{BA53C378-6655-4971-9882-228D1803A0CD} = {02FD3DAC-AA3C-41D8-86FF-8AE05DC5B9F0}
+		{7319CF7B-2B59-4D0D-9025-283362C34242} = {BBC3837C-5486-4B81-92F4-2ADAE8696667}
+		{F9FFB1CF-216A-4162-8BC3-5486D7CF6E49} = {7319CF7B-2B59-4D0D-9025-283362C34242}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}
