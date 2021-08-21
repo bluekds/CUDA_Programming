@@ -76,6 +76,9 @@ int main(void)
 	cudaMemcpy(c, d_c, memSize, cudaMemcpyDeviceToHost);
 	timer.offTimer(3);
 
+	// Release device memory
+	cudaFree(d_a); cudaFree(d_b); cudaFree(d_c);
+
 	timer.offTimer(0); timer.printTimer();
 
 	// Check results
@@ -91,8 +94,6 @@ int main(void)
 	if (result)
 		printf("GPU works well!\n");
 
-	// Release device memory
-	cudaFree(d_a); cudaFree(d_b); cudaFree(d_c);
 	// Release host memory
 	delete[] a; delete[] b; delete[] c;
 
