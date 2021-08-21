@@ -46,6 +46,7 @@ int main(void)
 	// 2. Data copy : Host (a, b) -> Device (d_a, d_b)
 
 	// 3. Kernel call
+	// vecAdd << <1, NUM_DATA >> > (d_a, d_b, d_c);
 
 	// 4. Copy results : Device (d_c) -> Host (c)
 
