@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloCUDA", "HelloCUDA\HelloCUDA.vcxproj", "{9DEA8AED-2051-4FF7-8BDF-7AEC633C1950}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[Lv1]Lecture2", "[Lv1]Lecture2", "{02FD3DAC-AA3C-41D8-86FF-8AE05DC5B9F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DEA8AED-2051-4FF7-8BDF-7AEC633C1950}.Debug|x64.ActiveCfg = Debug|x64
+		{9DEA8AED-2051-4FF7-8BDF-7AEC633C1950}.Debug|x64.Build.0 = Debug|x64
+		{9DEA8AED-2051-4FF7-8BDF-7AEC633C1950}.Release|x64.ActiveCfg = Release|x64
+		{9DEA8AED-2051-4FF7-8BDF-7AEC633C1950}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9DEA8AED-2051-4FF7-8BDF-7AEC633C1950} = {02FD3DAC-AA3C-41D8-86FF-8AE05DC5B9F0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}
+	EndGlobalSection
+EndGlobal
