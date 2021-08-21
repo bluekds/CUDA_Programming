@@ -10,8 +10,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\..\Beginner_Class\Lecture2\HelloCUDA\HelloCUDA.cu" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9DEA8AED-2051-4FF7-8BDF-7AEC633C1950}</ProjectGuid>
+    <ProjectGuid>{BA53C378-6655-4971-9882-228D1803A0CD}</ProjectGuid>
     <RootNamespace>HelloCUDA</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -76,9 +79,6 @@
       <TargetMachinePlatform>64</TargetMachinePlatform>
     </CudaCompile>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <CudaCompile Include="kernel.cu" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.2.targets" />
