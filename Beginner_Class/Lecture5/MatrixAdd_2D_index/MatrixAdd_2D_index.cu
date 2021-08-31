@@ -5,14 +5,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define ROW_SIZE 16
-#define COL_SIZE 16
+#define ROW_SIZE 32
+#define COL_SIZE 32
 
 __global__ void matAdd_2D_index(float* _dA, float* _dB, float* _dC)
 {
-	unsigned int row = threadIdx.x;
-	unsigned int col = threadIdx.y;
-	unsigned int index = row * blockDim.y + col;
+	unsigned int col = threadIdx.x;
+	unsigned int row = threadIdx.y;
+	unsigned int index = row * blockDim.x + col;
 
 	_dC[index] = _dA[index] + _dB[index];
 }
