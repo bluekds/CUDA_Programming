@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\..\Beginner_Class\Lecture6\MatAdd_LargeMatrix\MatAdd_LargeMatrix.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Beginner_Class\Lecture6\MatAdd_LargeMatrix\main.cpp" />
+    <ClCompile Include="..\..\..\..\Common\DS_timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Beginner_Class\Lecture6\MatAdd_LargeMatrix\MatAdd_LargeMatrix.h" />
+    <ClInclude Include="..\..\..\..\Common\DS_definitions.h" />
+    <ClInclude Include="..\..\..\..\Common\DS_timer.h" />
+  </ItemGroup>
+</Project>

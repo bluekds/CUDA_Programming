@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Beginner_Class\Lecture6\MatAdd_skeleton\DS_definitions.h" />
+    <ClInclude Include="..\..\..\..\Beginner_Class\Lecture6\MatAdd_skeleton\DS_timer.h" />
+    <ClInclude Include="..\..\..\..\Beginner_Class\Lecture6\MatAdd_skeleton\MatAdd_LargeMatrix.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Beginner_Class\Lecture6\MatAdd_skeleton\DS_timer.cpp" />
+    <ClCompile Include="..\..\..\..\Beginner_Class\Lecture6\MatAdd_skeleton\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\..\Beginner_Class\Lecture6\MatAdd_skeleton\MatAdd_LargeMatrix.cu" />
+  </ItemGroup>
+</Project>
