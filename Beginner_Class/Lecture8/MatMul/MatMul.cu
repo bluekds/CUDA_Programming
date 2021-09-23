@@ -32,10 +32,11 @@ bool compareMatrix(DATA_TYEP* _A, DATA_TYEP* _B, int _size);
 int main(int argc, char* argv[])
 {
 	DS_timer timer(10);
-	timer.setTimerName(0, (char*)"CPU code");
-	timer.setTimerName(1, (char*)"Kernel");
-	timer.setTimerName(4, (char*)"[Data transter] host->device");
-	timer.setTimerName(5, (char*)"[Data transfer] device->host");
+	timer.setTimerName(0, (char*)"CPU algorithm");
+	timer.setTimerName(1, (char*)"GPU/CUDA algorithm");
+	timer.setTimerName(2, (char*)" - Kernel");
+	timer.setTimerName(4, (char*)" - [Data transter] host->device");
+	timer.setTimerName(5, (char*)" - [Data transfer] device->host");
 
 	// set matrix size
 	int m, n, k;
@@ -89,6 +90,8 @@ int main(int argc, char* argv[])
 	cudaMalloc(&dC, sizeC * sizeof(DATA_TYEP));
 	cudaMemset(dC, 0, sizeC * sizeof(DATA_TYEP));
 
+	timer.onTimer(1);
+
 	timer.onTimer(4);
 	cudaMemcpy(dA, A, sizeA * sizeof(DATA_TYEP), cudaMemcpyHostToDevice);
 	cudaMemcpy(dB, B, sizeB * sizeof(DATA_TYEP), cudaMemcpyHostToDevice);
@@ -100,14 +103,20 @@ int main(int argc, char* argv[])
 	printf("Grid(%d, %d), Block(%d, %d)\n", gridDim.x, gridDim.y, blockDim.x, blockDim.y);
 
 	// GPU version
-	timer.onTimer(1);
+	timer.onTimer(2);
 	MatMul <<< gridDim, blockDim >>> (dA, dB, dC, m, n, k);
 	cudaDeviceSynchronize();
-	timer.offTimer(1);
+	timer.offTimer(2);
 
 	timer.onTimer(5);
 	cudaMemcpy(Cgpu, dC, sizeC * sizeof(DATA_TYEP), cudaMemcpyDeviceToHost);
 	timer.offTimer(5);
+
+	timer.offTimer(1);
+
+	cudaFree(dA);
+	cudaFree(dB);
+	cudaFree(dC);
 
 #ifdef DO_CPU
 	printf("[Kernel basic] ");
@@ -120,10 +129,6 @@ int main(int argc, char* argv[])
 	delete B;
 	delete Ccpu;
 	delete Cgpu;
-
-	cudaFree(dA);
-	cudaFree(dB);
-	cudaFree(dC);
 
 	return 0;
 }
