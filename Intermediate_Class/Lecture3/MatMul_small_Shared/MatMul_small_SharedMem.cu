@@ -3,7 +3,6 @@
 
 #include "DS_timer.h"
 
-#include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,12 +12,6 @@
 #define ROW_SIZE (32)
 #define K_SIZE   (128)
 #define COL_SIZE (32)
-
-#if K_SIZE < 129
-#define USE_SHARED_VER
-#endif
-#define USE_SHARED_VER_C
-#define USE_BASE_KERNEL
 
 #define MAT_SIZE_A (ROW_SIZE*K_SIZE)
 #define MAT_SIZE_B (K_SIZE*COL_SIZE)
@@ -48,7 +41,7 @@ float deviceC[COL_SIZE][COL_SIZE];	// device result
 #define memsetZero(_P,_type,_size) memset(_P, 0, sizeof(_type)*_size);
 #define dMemAlloc(_P, _type, _size) cudaMalloc(&_P, sizeof(_type)*_size);
 
-#ifdef USE_BASE_KERNEL
+
 __global__ void matMul_kernel(float* _A, float* _B, float* _C)
 {
 	int row = threadIdx.x;
@@ -59,9 +52,8 @@ __global__ void matMul_kernel(float* _A, float* _B, float* _C)
 	for (int k = 0; k < K_SIZE; k++)
 		_C[index] += _A[row * K_SIZE + k] * _B[col + k * COL_SIZE];
 }
-#endif
 
-#ifdef USE_SHARED_VER
+
 __global__ void matMul_kernel_shared(float* _A, float* _B, float* _C)
 {
 	int row = threadIdx.x;
@@ -82,24 +74,6 @@ __global__ void matMul_kernel_shared(float* _A, float* _B, float* _C)
 	for (int k = 0; k < K_SIZE; k++)
 		_C[index] += sA[row][k] * sB[k][col];
 }
-#endif
-
-#ifdef USE_SHARED_VER_C
-__global__ void matMul_kernel_shared_C(float* _A, float* _B, float* _C)
-{
-	int row = threadIdx.y;
-	int col = threadIdx.x;
-	int index = row * blockDim.x + col;
-
-	__shared__ float sC[MAT_SIZE_C];
-
-	sC[index] = 0;
-	for (int k = 0; k < K_SIZE; k++)
-		sC[index] += _A[row * K_SIZE + k] * _B[col + k * COL_SIZE];
-
-	_C[index] = sC[index];
-}
-#endif
 
 void main(void)
 {
@@ -121,7 +95,6 @@ void main(void)
 
 	// Host code
 	timer->onTimer(TIMER_HOST);
-	//#pragma omp parallel for num_threads(NUM_CPU_THREADS)
 	for (int r = 0; r < ROW_SIZE; r++)
 		for (int c = 0; c < COL_SIZE; c++)
 			for (int k = 0; k < K_SIZE; k++)
@@ -136,28 +109,15 @@ void main(void)
 
 	dim3 blockDim(ROW_SIZE, COL_SIZE);
 
-#ifdef USE_BASE_KERNEL
 	timer->onTimer(TIMER_KERNEL);
 	matMul_kernel << <1, blockDim >> > (dA, dB, dC);
 	cudaDeviceSynchronize();
 	timer->offTimer(TIMER_KERNEL);
-#endif
 
-#ifdef USE_SHARED_VER
-	//// Kernel call (shared memory)
 	timer->onTimer(TIMER_KERNEL_SH);
 	matMul_kernel_shared << <1, blockDim >> > (dA, dB, dC);
 	cudaDeviceSynchronize();
 	timer->offTimer(TIMER_KERNEL_SH);
-#endif
-
-#ifdef USE_SHARED_VER_C
-	//// Kernel call (shared memory C)
-	timer->onTimer(TIMER_KERNEL_SH_C);
-	matMul_kernel_shared_C << <1, blockDim >> > (dA, dB, dC);
-	cudaDeviceSynchronize();
-	timer->offTimer(TIMER_KERNEL_SH_C);
-#endif
 
 	// Get back result : D -> H
 	timer->onTimer(TIMER_DtoH);
@@ -207,7 +167,6 @@ void setTimer(void)
 	timer->setTimerName(TIMER_HOST, (char*)"CPU code");
 	timer->setTimerName(TIMER_KERNEL, (char*)"Kernel launch");
 	timer->setTimerName(TIMER_KERNEL_SH, (char*)"Kernel launch (shared ver.)");
-	timer->setTimerName(TIMER_KERNEL_SH_C, (char*)"Kernel launch (shared ver. C)");
 	timer->setTimerName(TIMER_HtoD, (char*)"[Data transter] host->device");
 	timer->setTimerName(TIMER_DtoH, (char*)"[Data transfer] device->host");
 }
