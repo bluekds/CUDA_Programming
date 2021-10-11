@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
 
 	timer.offTimer(2);
 
-	// 3. Set the thrad layout
+	// 3. Set the thread layout
 	// 
 	// dim3 gridDim(?, ?);
 	// dim3 blockDim(?, ?);
