@@ -43,12 +43,12 @@ __global__ void MatMul_SharedMem(DATA_TYPE* matA, DATA_TYPE* matB, DATA_TYPE* ma
 		if (row >= m || offset + localCol >= k)
 			subA[localRow][localCol] = 0;
 		else
-			subA[localRow][localCol] = matA[ID2INDEX(row, offset + localCol, k)];
+			subA[localRow][localCol] = matA[row * k + (offset + localCol)];
 
 		if (col >= n || offset + localRow >= k)
 			subB[localRow][localCol] = 0;
 		else
-			subB[localRow][localCol] = matB[ID2INDEX(offset + localRow, col, n)];
+			subB[localRow][localCol] = matB[(offset + localRow) * n + col];
 
 		__syncthreads();
 
@@ -62,7 +62,7 @@ __global__ void MatMul_SharedMem(DATA_TYPE* matA, DATA_TYPE* matB, DATA_TYPE* ma
 	if (row >= m || col >= n)
 		return;
 
-	matC[ID2INDEX(row, col, n)] = val;
+	matC[row * n + col] = val;
 }
 /******************************************************************
 ******************************************************************/

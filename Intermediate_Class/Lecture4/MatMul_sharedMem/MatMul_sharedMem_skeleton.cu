@@ -34,9 +34,9 @@ __global__ void MatMul_SharedMem(DATA_TYPE* matA, DATA_TYPE* matB, DATA_TYPE* ma
 
 	DATA_TYPE val = 0;
 	for (int i = 0; i < k; i++)
-		val += matA[ID2INDEX(row, i, k)] * matB[ID2INDEX(i, col, n)];
+		val += matA[row * k + i] * matB[i * n + col)];
 
-	matC[ID2INDEX(row, col, n)] = val;
+	matC[row * n + col] = val;
 }
 /******************************************************************
 ******************************************************************/
