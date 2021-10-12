@@ -92,18 +92,19 @@ int main(int argc, char* argv[])
 	cudaMemcpy(dA, A, sizeA * sizeof(int), cudaMemcpyHostToDevice);
 	cudaMemcpy(dB, B, sizeB * sizeof(int), cudaMemcpyHostToDevice);
 
-	dim3 gridDim(ceil((float)m / BLOCK_SIZE), ceil((float)n / BLOCK_SIZE));
-	dim3 blockDim(BLOCK_SIZE, BLOCK_SIZE);
-
 	// Row = X-dim version
 	timer.onTimer(1);
-	MatMul_xRow<<<gridDim, blockDim>>> (dA, dB, dC, m, n, k);
+	dim3 gridDim_xRow(ceil((float)m / BLOCK_SIZE), ceil((float)n / BLOCK_SIZE));
+	dim3 blockDim_xRow(BLOCK_SIZE, BLOCK_SIZE);
+	MatMul_xRow<<<gridDim_xRow, blockDim_xRow >>> (dA, dB, dC, m, n, k);
 	cudaDeviceSynchronize();
 	timer.offTimer(1);
 
 	// Row = Y-dim version
 	timer.onTimer(2);
-	MatMul_yRow<< <gridDim, blockDim >> > (dA, dB, dC, m, n, k);
+	dim3 gridDim_yRow(ceil((float)n / BLOCK_SIZE), ceil((float)m / BLOCK_SIZE));
+	dim3 blockDim_yRow(BLOCK_SIZE, BLOCK_SIZE);
+	MatMul_yRow<<<gridDim_yRow, blockDim_yRow >>> (dA, dB, dC, m, n, k);
 	cudaDeviceSynchronize();
 	timer.offTimer(2);
 
