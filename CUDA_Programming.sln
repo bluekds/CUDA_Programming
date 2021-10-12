@@ -45,6 +45,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lecture4", "Lecture4", "{FF
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatMul_sharedMem", "VS2019\Intermediate_Class\Lecture4\MatMul_sharedMem\MatMul_sharedMem.vcxproj", "{22D65404-3842-48CD-BCA3-FABACECE205F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lecture5", "Lecture5", "{EF9A42B1-29F7-4349-827D-08B3B5D95ECA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatMul_MemAccessPattern", "VS2019\Intermediate_Class\Lecture5\MatMul_MemAccessPattern\MatMul_MemAccessPattern.vcxproj", "{78E9C712-3A19-4402-A9F6-50A621258682}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -127,6 +131,14 @@ Global
 		{22D65404-3842-48CD-BCA3-FABACECE205F}.Release|x64.Build.0 = Release|x64
 		{22D65404-3842-48CD-BCA3-FABACECE205F}.Release|x86.ActiveCfg = Release|Win32
 		{22D65404-3842-48CD-BCA3-FABACECE205F}.Release|x86.Build.0 = Release|Win32
+		{78E9C712-3A19-4402-A9F6-50A621258682}.Debug|x64.ActiveCfg = Debug|x64
+		{78E9C712-3A19-4402-A9F6-50A621258682}.Debug|x64.Build.0 = Debug|x64
+		{78E9C712-3A19-4402-A9F6-50A621258682}.Debug|x86.ActiveCfg = Debug|Win32
+		{78E9C712-3A19-4402-A9F6-50A621258682}.Debug|x86.Build.0 = Debug|Win32
+		{78E9C712-3A19-4402-A9F6-50A621258682}.Release|x64.ActiveCfg = Release|x64
+		{78E9C712-3A19-4402-A9F6-50A621258682}.Release|x64.Build.0 = Release|x64
+		{78E9C712-3A19-4402-A9F6-50A621258682}.Release|x86.ActiveCfg = Release|Win32
+		{78E9C712-3A19-4402-A9F6-50A621258682}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +163,8 @@ Global
 		{3541CE5D-897E-43DB-8CDB-CA6E865705A5} = {4CC9CC64-4526-4233-9BC9-1F8651604DE0}
 		{FF3FE1FF-AC94-4E2C-9C52-FD2318512EE2} = {B3430C43-00B8-443C-A7C2-DCF639AEADD1}
 		{22D65404-3842-48CD-BCA3-FABACECE205F} = {FF3FE1FF-AC94-4E2C-9C52-FD2318512EE2}
+		{EF9A42B1-29F7-4349-827D-08B3B5D95ECA} = {B3430C43-00B8-443C-A7C2-DCF639AEADD1}
+		{78E9C712-3A19-4402-A9F6-50A621258682} = {EF9A42B1-29F7-4349-827D-08B3B5D95ECA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}
