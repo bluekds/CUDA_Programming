@@ -51,6 +51,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatMul_MemAccessPattern", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatMul_bank_conflict", "VS2019\Intermediate_Class\Lecture5\MatMul_bank_conflict\MatMul_bank_conflict.vcxproj", "{8D608736-D0A2-4D23-BED7-641B87D5F4C1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lecture6", "Lecture6", "{3DEBB45B-FF8B-4776-BFF5-D68A48058E79}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThreadCounting_AtomicOp", "VS2019\Intermediate_Class\Lecture6\ThreadCounting_AtomicOp\ThreadCounting_AtomicOp.vcxproj", "{E36C456D-0161-426E-B305-E119C40B480F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -149,6 +153,14 @@ Global
 		{8D608736-D0A2-4D23-BED7-641B87D5F4C1}.Release|x64.Build.0 = Release|x64
 		{8D608736-D0A2-4D23-BED7-641B87D5F4C1}.Release|x86.ActiveCfg = Release|Win32
 		{8D608736-D0A2-4D23-BED7-641B87D5F4C1}.Release|x86.Build.0 = Release|Win32
+		{E36C456D-0161-426E-B305-E119C40B480F}.Debug|x64.ActiveCfg = Debug|x64
+		{E36C456D-0161-426E-B305-E119C40B480F}.Debug|x64.Build.0 = Debug|x64
+		{E36C456D-0161-426E-B305-E119C40B480F}.Debug|x86.ActiveCfg = Debug|Win32
+		{E36C456D-0161-426E-B305-E119C40B480F}.Debug|x86.Build.0 = Debug|Win32
+		{E36C456D-0161-426E-B305-E119C40B480F}.Release|x64.ActiveCfg = Release|x64
+		{E36C456D-0161-426E-B305-E119C40B480F}.Release|x64.Build.0 = Release|x64
+		{E36C456D-0161-426E-B305-E119C40B480F}.Release|x86.ActiveCfg = Release|Win32
+		{E36C456D-0161-426E-B305-E119C40B480F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +188,8 @@ Global
 		{EF9A42B1-29F7-4349-827D-08B3B5D95ECA} = {B3430C43-00B8-443C-A7C2-DCF639AEADD1}
 		{78E9C712-3A19-4402-A9F6-50A621258682} = {EF9A42B1-29F7-4349-827D-08B3B5D95ECA}
 		{8D608736-D0A2-4D23-BED7-641B87D5F4C1} = {EF9A42B1-29F7-4349-827D-08B3B5D95ECA}
+		{3DEBB45B-FF8B-4776-BFF5-D68A48058E79} = {B3430C43-00B8-443C-A7C2-DCF639AEADD1}
+		{E36C456D-0161-426E-B305-E119C40B480F} = {3DEBB45B-FF8B-4776-BFF5-D68A48058E79}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}
