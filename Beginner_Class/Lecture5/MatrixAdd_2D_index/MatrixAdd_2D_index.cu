@@ -47,7 +47,7 @@ int main(void)
 	cudaMemcpy(dB, B, sizeof(float) * matSize, cudaMemcpyHostToDevice);
 
 	// kernel call
-	dim3 blockDim(ROW_SIZE, COL_SIZE);
+	dim3 blockDim(COL_SIZE, ROW_SIZE);
 	matAdd_2D_index <<<1, blockDim>>> (dA, dB, dC);
 
 	// Copy matrix C from device (dC) to host
