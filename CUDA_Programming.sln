@@ -82,6 +82,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3_1_cudaMalloc", "VS2019\Bo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3_2_deviceMemory", "VS2019\Book_BJ\Chap3\3_2_deviceMemory\3_2_deviceMemory.vcxproj", "{4E4E04DA-F723-433F-BD30-518DAD37395D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3_3_cudaMemcpy", "VS2019\Book_BJ\Chap3\3_3_cudaMemcpy\3_3_cudaMemcpy.vcxproj", "{DD48244F-8370-46CA-912E-FC92C85F07E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -238,6 +240,12 @@ Global
 		{4E4E04DA-F723-433F-BD30-518DAD37395D}.Release|x64.ActiveCfg = Release|x64
 		{4E4E04DA-F723-433F-BD30-518DAD37395D}.Release|x64.Build.0 = Release|x64
 		{4E4E04DA-F723-433F-BD30-518DAD37395D}.Release|x86.ActiveCfg = Release|x64
+		{DD48244F-8370-46CA-912E-FC92C85F07E5}.Debug|x64.ActiveCfg = Debug|x64
+		{DD48244F-8370-46CA-912E-FC92C85F07E5}.Debug|x64.Build.0 = Debug|x64
+		{DD48244F-8370-46CA-912E-FC92C85F07E5}.Debug|x86.ActiveCfg = Debug|x64
+		{DD48244F-8370-46CA-912E-FC92C85F07E5}.Release|x64.ActiveCfg = Release|x64
+		{DD48244F-8370-46CA-912E-FC92C85F07E5}.Release|x64.Build.0 = Release|x64
+		{DD48244F-8370-46CA-912E-FC92C85F07E5}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -278,6 +286,7 @@ Global
 		{3E767B30-A0A2-4CF1-9BA2-AED9872A0B09} = {8DF863BE-C808-40ED-80CD-7389BA811A47}
 		{9C75E8B9-1EA0-4383-BA46-4DED30D2FA9C} = {B585C612-C301-4016-ACD5-92A0780520D0}
 		{4E4E04DA-F723-433F-BD30-518DAD37395D} = {B585C612-C301-4016-ACD5-92A0780520D0}
+		{DD48244F-8370-46CA-912E-FC92C85F07E5} = {B585C612-C301-4016-ACD5-92A0780520D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}

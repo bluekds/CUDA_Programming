@@ -16,11 +16,11 @@ int main(void)
 	cudaError_t errorCode ;
 
 	checkDeviceMemory();
-	errorCode = cudaMalloc(&dDataPtr, sizeof(int) * 10240); // device memory 할당
+	errorCode = cudaMalloc(&dDataPtr, sizeof(int) * 1024 * 1024); // device memory 할당
 	printf("cudaMalloc - %s\n", cudaGetErrorName(errorCode));
 	checkDeviceMemory();
 
-	errorCode = cudaMemset(dDataPtr, 0, sizeof(int) * 10240); // device memory 초기화
+	errorCode = cudaMemset(dDataPtr, 0, sizeof(int) * 1024 * 1024); // device memory 초기화
 	printf("cudaMemset - %s\n", cudaGetErrorName(errorCode));
 
 	errorCode = cudaFree(dDataPtr);

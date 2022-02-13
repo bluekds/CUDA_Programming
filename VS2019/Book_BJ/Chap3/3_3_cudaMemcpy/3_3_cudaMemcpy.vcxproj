@@ -11,11 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="..\..\..\..\Book_BJ\Chap3\3_2_deviceMemory\3_2.cu" />
+    <CudaCompile Include="..\..\..\..\Book_BJ\Chap3\3_3_cudaMemcpy\3_3.cu" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4E4E04DA-F723-433F-BD30-518DAD37395D}</ProjectGuid>
-    <RootNamespace>_3_2_deviceMemory</RootNamespace>
+    <ProjectGuid>{DD48244F-8370-46CA-912E-FC92C85F07E5}</ProjectGuid>
+    <RootNamespace>_3_3_cudaMemcpy</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
