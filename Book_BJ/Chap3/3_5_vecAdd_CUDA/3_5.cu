@@ -84,7 +84,7 @@ int main(void)
 	bool result = true;
 	for (int i = 0; i < NUM_DATA; i++) {
 		if (hc[i] != c[i]) {
-			printf("[%d] The resutls is not matched! (%d, %d)\n"
+			printf("[%d] The results is not matched! (%d, %d)\n"
 				, i, hc[i], c[i]);
 			result = false;
 		}
