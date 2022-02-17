@@ -24,7 +24,7 @@ int main(void)
 	timer.setTimerName(1, (char*)"Computation(Kernel)");
 	timer.setTimerName(2, (char*)"Data Trans. : Host -> Device");
 	timer.setTimerName(3, (char*)"Data Trans. : Device -> Host");
-	timer.setTimerName(4, (char*)"VectorSum on Host");
+	timer.setTimerName(4, (char*)"VecAdd on Host");
 	timer.initTimers();
 
 	int* a, * b, * c, * hc;	// Vectors on the host
@@ -75,10 +75,10 @@ int main(void)
 	cudaMemcpy(c, dc, memSize, cudaMemcpyDeviceToHost);
 	timer.offTimer(3);
 
+	timer.offTimer(0);
+
 	// Release device memory
 	cudaFree(da); cudaFree(db); cudaFree(dc);
-
-	timer.offTimer(0);
 	
 	timer.printTimer();
 
@@ -86,7 +86,7 @@ int main(void)
 	bool result = true;
 	for (int i = 0; i < NUM_DATA; i++) {
 		if (hc[i] != c[i]) {
-			printf("[%d] The results is not matched! (%d, %d)\n"
+			printf("[%d] The result is not matched! (%d, %d)\n"
 				, i, hc[i], c[i]);
 			result = false;
 		}
