@@ -11,15 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="..\..\..\..\Book_BJ\Chap3\3_5_vecAdd_CUDA\3_5.cu" />
-    <CudaCompile Include="..\..\..\..\Book_BJ\Chap3\3_5_vecAdd_CUDA\3_5_skeleton.cu">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </CudaCompile>
+    <CudaCompile Include="..\..\..\..\Book_BJ\Chap3\3_6_vecAdd_CUDA_Time\3_6.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Book_BJ\Chap3\3_6_vecAdd_CUDA_Time\DS_definitions.h" />
+    <ClInclude Include="..\..\..\..\Book_BJ\Chap3\3_6_vecAdd_CUDA_Time\DS_timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Book_BJ\Chap3\3_6_vecAdd_CUDA_Time\DS_timer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DC0760F0-246D-4B14-92A9-47C3986D73E6}</ProjectGuid>
-    <RootNamespace>_3_5_vecAdd_CUDA</RootNamespace>
+    <ProjectGuid>{CA30DC46-2F52-4DA1-8A84-8B1EF1795F80}</ProjectGuid>
+    <RootNamespace>_3_6_vecAdd_CUDA_Time</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
