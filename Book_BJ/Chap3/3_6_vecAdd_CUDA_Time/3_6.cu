@@ -78,7 +78,9 @@ int main(void)
 	// Release device memory
 	cudaFree(da); cudaFree(db); cudaFree(dc);
 
-	timer.offTimer(0); timer.printTimer();
+	timer.offTimer(0);
+	
+	timer.printTimer();
 
 	// Check results
 	bool result = true;
