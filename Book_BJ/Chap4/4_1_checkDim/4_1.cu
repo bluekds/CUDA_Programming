@@ -18,9 +18,9 @@ int main(void)
 	dim3 dimBlock(3,1,1); // or dimBlock(3)
 	dim3 dimGrid(2,1,1); // or dimGrid(2)
 
-	printf("dimGrid.x %d dimGrid.y %d dimGrid.z %d\n"
+	printf("dimGrid.x=%d dimGrid.y=%d dimGrid.z=%d\n"
 		, dimGrid.x, dimGrid.y, dimGrid.z);
-	printf("dimBlock.x %d dimBlock.y %d dimBlock.z %d\n"
+	printf("dimBlock.x=%d dimBlock.y=%d dimBlock.z=%d\n"
 		, dimBlock.x, dimBlock.y, dimBlock.z);
 
 	checkIndex<<<dimGrid, dimBlock>>>();
