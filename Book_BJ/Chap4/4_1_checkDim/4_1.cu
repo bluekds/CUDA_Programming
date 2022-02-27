@@ -25,5 +25,5 @@ int main(void)
 
 	checkIndex<<<dimGrid, dimBlock>>>();
 
-	return(0);
+	return 0;
 }
