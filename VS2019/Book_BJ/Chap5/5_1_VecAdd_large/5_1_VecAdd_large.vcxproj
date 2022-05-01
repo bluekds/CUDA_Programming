@@ -11,11 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="..\..\..\..\Book_BJ\Chap2\2_1_HelloCUDA\2_1.cu" />
+    <ClInclude Include="..\..\..\..\Book_BJ\Chap5\5_1_vecAdd_large\DS_definitions.h" />
+    <ClInclude Include="..\..\..\..\Book_BJ\Chap5\5_1_vecAdd_large\DS_timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Book_BJ\Chap5\5_1_vecAdd_large\DS_timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\..\Book_BJ\Chap5\5_1_vecAdd_large\5_1.cu" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3E767B30-A0A2-4CF1-9BA2-AED9872A0B09}</ProjectGuid>
-    <RootNamespace>_2_1_HelloCUDA</RootNamespace>
+    <ProjectGuid>{C7187DE4-E601-46D5-B0BD-ABCA2E22093A}</ProjectGuid>
+    <RootNamespace>_5_1_VecAdd_large</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">

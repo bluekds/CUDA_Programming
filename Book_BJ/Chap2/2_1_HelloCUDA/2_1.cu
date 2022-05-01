@@ -11,5 +11,6 @@ int main(void)
 {
 	printf("Hello GPU from CPU!\n");
 	helloCUDA << <1, 10 >> > ();
+	cudaDeviceSynchronize();
 	return 0;
 }
