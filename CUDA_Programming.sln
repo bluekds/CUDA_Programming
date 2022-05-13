@@ -106,6 +106,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CB372A
 		Etc\BigWar\Common\BigWar.h = Etc\BigWar\Common\BigWar.h
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerialAlgorithm", "VS2019\Etc\BigWar\SerialAlgorithm\SerialAlgorithm.vcxproj", "{69440CBA-7CBF-48F6-BF71-03199EB704DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -308,6 +310,14 @@ Global
 		{95835036-A060-42F9-894B-080080AFBBFD}.Release|x64.Build.0 = Release|x64
 		{95835036-A060-42F9-894B-080080AFBBFD}.Release|x86.ActiveCfg = Release|Win32
 		{95835036-A060-42F9-894B-080080AFBBFD}.Release|x86.Build.0 = Release|Win32
+		{69440CBA-7CBF-48F6-BF71-03199EB704DB}.Debug|x64.ActiveCfg = Debug|x64
+		{69440CBA-7CBF-48F6-BF71-03199EB704DB}.Debug|x64.Build.0 = Debug|x64
+		{69440CBA-7CBF-48F6-BF71-03199EB704DB}.Debug|x86.ActiveCfg = Debug|Win32
+		{69440CBA-7CBF-48F6-BF71-03199EB704DB}.Debug|x86.Build.0 = Debug|Win32
+		{69440CBA-7CBF-48F6-BF71-03199EB704DB}.Release|x64.ActiveCfg = Release|x64
+		{69440CBA-7CBF-48F6-BF71-03199EB704DB}.Release|x64.Build.0 = Release|x64
+		{69440CBA-7CBF-48F6-BF71-03199EB704DB}.Release|x86.ActiveCfg = Release|Win32
+		{69440CBA-7CBF-48F6-BF71-03199EB704DB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -359,6 +369,7 @@ Global
 		{FD5407A3-F41B-41D7-BB31-7CFE5D8743AC} = {508A9370-A16D-4217-B725-00AF4B5EFB64}
 		{95835036-A060-42F9-894B-080080AFBBFD} = {FD5407A3-F41B-41D7-BB31-7CFE5D8743AC}
 		{CB372ADB-45B3-4153-912E-3D0B5ED4D9C7} = {FD5407A3-F41B-41D7-BB31-7CFE5D8743AC}
+		{69440CBA-7CBF-48F6-BF71-03199EB704DB} = {FD5407A3-F41B-41D7-BB31-7CFE5D8743AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}

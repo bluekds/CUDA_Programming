@@ -19,6 +19,6 @@ ArmyGenerator::~ArmyGenerator()
 Army ArmyGenerator::genArmy()
 {
 	for (int i = 0; i < ARMY_DIMENSION; i++)
-		army.pos[i] = (*dist)(*gen) + (rand() % 100) / 100.f;
+		army.pos[i] = (*dist)(*gen) + (rand() % 10) / 10.f;
 	return army;
 }

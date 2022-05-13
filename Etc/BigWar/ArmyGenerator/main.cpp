@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 
-#define _DEBUG
+//#define _DEBUG
 using namespace std;
 
 Army genArmy(UINT _min = RANGE_MIN, UINT _max = RANGE_MAX);
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 		army.print();
 		#endif
 		writeFile.write((char*)army.pos, sizeof(POS_TYPE) * ARMY_DIMENSION);
-		if ((i % (numArmy / 10)) == 0)
+		if (numArmy > 10 && (i % (numArmy / 10)) == 0)
 			printf("%d%% (%d/%d)\n", (i * 100 /numArmy), i, numArmy);
 	}
 	writeFile.close();

@@ -16,7 +16,7 @@ public:
 	~Army(){}
 	void print() {
 		for (int i = 0; i < ARMY_DIMENSION; i++)
-			printf("%.2f ", pos[i]);
+			printf("%f ", pos[i]);
 		printf("\n");
 	}
 public:
