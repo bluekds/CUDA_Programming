@@ -37,11 +37,9 @@ int main(int argc, char** argv) {
 	grader.grading(result);
 
 	FILE* fp = NULL;
-	char gradeFileName[255] = { 0 };
-	sprintf_s(gradeFileName, "%s.txt", argv[5]);
-	fopen_s(&fp, gradeFileName, "a");
+	fopen_s(&fp, argv[5], "a");
 	if (fp == NULL) {
-		printf("Fail to open %s\n", gradeFileName);
+		printf("Fail to open %s\n", argv[5]);
 		exit(3);
 	}
 	fprintf(fp, "%f\t%d\n", timer.getTimer_ms(0), grader.getNumCorrect());
