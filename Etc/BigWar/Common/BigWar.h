@@ -57,8 +57,11 @@ public:
 		return _pair1.dist < _pair2.dist;
 	}
 public:
+	Pair() { A = B = 0; dist = 0; }
+
 	bool operator >(Pair& ref) {return !compare(*this, ref);}
 	bool operator <(Pair& ref) {return compare(*this, ref);}
+
 	void set(UINT _a, UINT _b, POS_TYPE _dist) { A = _a; B = _b; dist = _dist; }
 	void print(void) { printf("(%u,%u): %f\n", A, B, dist); }
 };

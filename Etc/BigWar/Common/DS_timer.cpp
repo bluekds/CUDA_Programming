@@ -298,13 +298,13 @@ void DS_timer::printToFile( char* fileName, int _id )
 	for ( UINT i = 0 ; i < numTimer ; i++ ) {
 		if ( getTimer_ms(i) == 0 )
 			continue ;
-		fprintf_s(fp, "%s: %.9f\n", timerName[i].c_str(), getTimer_ms(i) ) ;
+		fprintf_s(fp, "%.9f", getTimer_ms(i) ) ;
 	}
 
 	for ( UINT i = 0 ; i < numCounter ;i++ ) {
 		if ( counters[i] == 0 )
 			continue ;
-		fprintf_s(fp, "%s: %d\n", timerName[i].c_str(), counters[i] ) ;
+		fprintf_s(fp, "%d", counters[i] ) ;
 	}
 
 	fprintf_s(fp, "\n") ;
