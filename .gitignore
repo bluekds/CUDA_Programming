@@ -364,3 +364,4 @@ FodyWeavers.xsd
 *.mp
 /VS2019/Etc/BigWar/ArmyGenerator/test.txt
 /VS2019/Etc/BigWar/SerialAlgorithm/test.txt
+/VS2019/Etc/BigWar/SerialAlgorithm/result.txt
