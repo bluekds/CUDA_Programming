@@ -38,7 +38,7 @@ int main(int argc, char** argv)
 		#endif
 		writeFile.write((char*)army.pos, sizeof(POS_TYPE) * ARMY_DIMENSION);
 		if (numArmy > 10 && (i % (numArmy / 10)) == 0)
-			printf("%d%% (%d/%d)\n", (i * 100 /numArmy), i, numArmy);
+			printf("%.0f%% (%d/%d)\n", (i * 100.0f /numArmy), i, numArmy);
 	}
 	writeFile.close();
 	printf("Generataion was complemtead!\n");

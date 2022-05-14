@@ -21,6 +21,9 @@
     <ClCompile Include="..\..\..\..\Etc\BigWar\SerialAlgorithm\Team.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Etc\BigWar\Common\DS_timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Etc\BigWar\SerialAlgorithm\Team.h">

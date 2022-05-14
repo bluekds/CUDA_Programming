@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Etc\BigWar\Common\DS_timer.cpp" />
     <ClCompile Include="..\..\..\..\Etc\BigWar\SerialAlgorithm\main.cpp" />
     <ClCompile Include="..\..\..\..\Etc\BigWar\SerialAlgorithm\Team.cpp" />
   </ItemGroup>

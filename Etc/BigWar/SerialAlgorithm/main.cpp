@@ -1,4 +1,5 @@
 #include "../Common/BigWar.h"
+#include "../Common/DS_timer.h"
 #include "Team.h"
 #include <vector>
 #include <algorithm>
@@ -14,10 +15,18 @@ int main(int argc, char** argv)
 		exit(1);
 	}
 
+	DS_timer timer(10);
+	timer.initTimers();
+	timer.setTimerName(0, (char*)"Total");
+	timer.setTimerName(1, (char*)"Data load");
+	timer.setTimerName(2, (char*)"Processing");
+
 	FILE* fp = NULL;
 	UINT numArmies = 0;	
 	Team *teams[2];
 
+	timer.onTimer(0);
+	timer.onTimer(1);
 	for (int i = 0; i < 2; i++) { // for each team
 		fopen_s(&fp, argv[i+1], "rb");
 		if (fp == NULL) {
@@ -30,13 +39,22 @@ int main(int argc, char** argv)
 		teams[i]->loadTeam();
 		fclose(fp);
 	}
+	timer.offTimer(1);
 
 	vector<Pair> result(NUM_RESULTS);
 	for (int i = 0; i < NUM_RESULTS; i++)
 		result[i].dist = RANGE_MAX;
 
+	timer.onTimer(2);
+	timer.onTimer(3);
 	Pair curPair;
 	for (int iA = 0; iA < teams[0]->numArmies; iA++) {
+		if (iA % 100 == 0) {
+			timer.offTimer(3);
+			printf("%d - %.2f ms\n", iA, timer.getTimer_ms(3));
+			timer.initTimer(3);
+			timer.onTimer(3);
+		}
 		for (int iB = 0; iB < teams[1]->numArmies; iB++) {
 			curPair.set(iA, iB, Army::dist(teams[0]->armies[iA], teams[1]->armies[iB]));
 			if (result[LAST_PAIR] > curPair) {
@@ -45,6 +63,7 @@ int main(int argc, char** argv)
 			}
 		}
 	}
+	timer.offTimer(2);
 
 	// Write the result
 	FILE* wfp = NULL;
@@ -58,4 +77,9 @@ int main(int argc, char** argv)
 		fprintf(wfp, "%d %d %.2f\n", result[i].A, result[i].B, result[i].dist);
 	}
 	fclose(wfp);
+
+	timer.offTimer(0);
+	timer.printTimer();
+
+	return 0;
 }
