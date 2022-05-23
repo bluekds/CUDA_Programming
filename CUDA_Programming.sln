@@ -110,6 +110,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerialAlgorithm", "VS2019\E
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Skeleton", "VS2019\Etc\BigWar\Skeleton\Skeleton.vcxproj", "{088A75C3-B8E9-41B3-9C8D-D1A787D65BB3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{55C2595C-4452-430C-99B7-41EE2186689D}"
+	ProjectSection(SolutionItems) = preProject
+		Book_BJ\Common\CUDA_definitions.cuh = Book_BJ\Common\CUDA_definitions.cuh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -381,6 +386,7 @@ Global
 		{CB372ADB-45B3-4153-912E-3D0B5ED4D9C7} = {FD5407A3-F41B-41D7-BB31-7CFE5D8743AC}
 		{69440CBA-7CBF-48F6-BF71-03199EB704DB} = {FD5407A3-F41B-41D7-BB31-7CFE5D8743AC}
 		{088A75C3-B8E9-41B3-9C8D-D1A787D65BB3} = {FD5407A3-F41B-41D7-BB31-7CFE5D8743AC}
+		{55C2595C-4452-430C-99B7-41EE2186689D} = {5C5F8058-87FE-4819-9109-A071CD239ED0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}
