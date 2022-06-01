@@ -117,6 +117,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2AD07E
 		Book_BJ\Common\CUDA_definitions.cuh = Book_BJ\Common\CUDA_definitions.cuh
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5_3_LargeMatrix_Add_skeleton", "VS2019\Book_BJ\Chap5\5_3_LargeMatrix_Add_skeleton\5_3_LargeMatrix_Add_skeleton.vcxproj", "{3F22593B-15EF-44F7-8C7F-072917071C12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -343,6 +345,14 @@ Global
 		{42A49171-4409-425B-96E2-A3E961EF7300}.Release|x64.Build.0 = Release|x64
 		{42A49171-4409-425B-96E2-A3E961EF7300}.Release|x86.ActiveCfg = Release|Win32
 		{42A49171-4409-425B-96E2-A3E961EF7300}.Release|x86.Build.0 = Release|Win32
+		{3F22593B-15EF-44F7-8C7F-072917071C12}.Debug|x64.ActiveCfg = Debug|x64
+		{3F22593B-15EF-44F7-8C7F-072917071C12}.Debug|x64.Build.0 = Debug|x64
+		{3F22593B-15EF-44F7-8C7F-072917071C12}.Debug|x86.ActiveCfg = Debug|Win32
+		{3F22593B-15EF-44F7-8C7F-072917071C12}.Debug|x86.Build.0 = Debug|Win32
+		{3F22593B-15EF-44F7-8C7F-072917071C12}.Release|x64.ActiveCfg = Release|x64
+		{3F22593B-15EF-44F7-8C7F-072917071C12}.Release|x64.Build.0 = Release|x64
+		{3F22593B-15EF-44F7-8C7F-072917071C12}.Release|x86.ActiveCfg = Release|Win32
+		{3F22593B-15EF-44F7-8C7F-072917071C12}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -398,6 +408,7 @@ Global
 		{088A75C3-B8E9-41B3-9C8D-D1A787D65BB3} = {FD5407A3-F41B-41D7-BB31-7CFE5D8743AC}
 		{42A49171-4409-425B-96E2-A3E961EF7300} = {6284B257-3B6A-4572-9D8A-BFEE62FFE550}
 		{2AD07EAA-E968-46AA-86C3-C656C00D42D9} = {5C5F8058-87FE-4819-9109-A071CD239ED0}
+		{3F22593B-15EF-44F7-8C7F-072917071C12} = {6284B257-3B6A-4572-9D8A-BFEE62FFE550}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}
