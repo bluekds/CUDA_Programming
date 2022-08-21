@@ -19,7 +19,7 @@ void main(void) {
             , i, devProp.name);
         printf("\tCompute capability: %d.%d\n"
             , devProp.major, devProp.minor);
-        printf("\tThe number of steraming multiprocesors: %d\n"
+        printf("\tThe number of streaming multiprocessors: %d\n"
             , devProp.multiProcessorCount);
         printf("\tThe number of CUDA cores: %d\n"
             , _ConvertSMVer2Cores(devProp.major, devProp.minor)
