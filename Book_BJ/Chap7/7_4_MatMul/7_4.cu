@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 	timer.setTimerName(0, (char*)"CPU algorithm");
 	timer.setTimerName(1, (char*)"GPU/CUDA algorithm");
 	timer.setTimerName(2, (char*)" - Kernel");
-	timer.setTimerName(4, (char*)" - [Data transter] host->device");
+	timer.setTimerName(4, (char*)" - [Data transfer] host->device");
 	timer.setTimerName(5, (char*)" - [Data transfer] device->host");
 
 	// set matrix size
@@ -65,7 +65,7 @@ int main(int argc, char* argv[])
 
 #ifdef DO_CPU // CPU version (OpenMP)
 	timer.onTimer(0);
-#pragma omp parallel for num_threads(4)
+//#pragma omp parallel for num_threads(4)
 	for (int row = 0; row < m; row++) {
 		for (int col = 0; col < n; col++) {
 			int cIndex = ID2INDEX(row, col, n);
