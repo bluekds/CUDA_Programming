@@ -34,6 +34,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="..\..\..\..\Book_BJ\Chap5\5_3_LargeMatrix_Add\MatAdd_LargeMatrix.cu" />
+    <CudaCompile Include="..\..\..\..\Book_BJ\Chap5\5_3_LargeMatrix_Add\MatAdd_LargeMatrix.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
   </ItemGroup>
 </Project>

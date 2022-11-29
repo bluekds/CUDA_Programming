@@ -7,7 +7,7 @@
 #include <string.h>
 
 #define DO_CPU
-#define DATA_TYEP int
+#define DATA_TYPE int
 
 #define SIZE_M (512*2)
 #define SIZE_N (512*4)
@@ -24,10 +24,10 @@
 #define KERNEL_MUL(_a,_b) (_a*_b)
 
 // kernel declarations
-__global__ void MatMul(DATA_TYEP* matA, DATA_TYEP* matB, DATA_TYEP* matC, int m, int n, int k);
+__global__ void MatMul(DATA_TYPE* matA, DATA_TYPE* matB, DATA_TYPE* matC, int m, int n, int k);
 
 template<class T> void allocNinitMem(T** p, long long size, double* memUsage = NULL);
-bool compareMatrix(DATA_TYEP* _A, DATA_TYEP* _B, int _size);
+bool compareMatrix(DATA_TYPE* _A, DATA_TYPE* _B, int _size);
 
 int main(int argc, char* argv[])
 {
@@ -51,13 +51,13 @@ int main(int argc, char* argv[])
 	int sizeC = m * n;
 
 	// Make matrix
-	DATA_TYEP* A = NULL, * B = NULL;
-	allocNinitMem<DATA_TYEP>(&A, sizeA);
-	allocNinitMem<DATA_TYEP>(&B, sizeB);
+	DATA_TYPE* A = NULL, * B = NULL;
+	allocNinitMem<DATA_TYPE>(&A, sizeA);
+	allocNinitMem<DATA_TYPE>(&B, sizeB);
 
-	DATA_TYEP* Ccpu = NULL, * Cgpu = NULL;
-	allocNinitMem<DATA_TYEP>(&Ccpu, sizeC);
-	allocNinitMem<DATA_TYEP>(&Cgpu, sizeC);
+	DATA_TYPE* Ccpu = NULL, * Cgpu = NULL;
+	allocNinitMem<DATA_TYPE>(&Ccpu, sizeC);
+	allocNinitMem<DATA_TYPE>(&Cgpu, sizeC);
 
 	// generate input matrices
 	for (int i = 0; i < sizeA; i++) A[i] = ((rand() % 10) + ((rand() % 100) / 100.0));
@@ -79,22 +79,22 @@ int main(int argc, char* argv[])
 #endif
 
 	// GPU setup
-	DATA_TYEP* dA, * dB, * dC;
+	DATA_TYPE* dA, * dB, * dC;
 
-	cudaMalloc(&dA, sizeA * sizeof(DATA_TYEP));
-	cudaMemset(dA, 0, sizeA * sizeof(DATA_TYEP));
+	cudaMalloc(&dA, sizeA * sizeof(DATA_TYPE));
+	cudaMemset(dA, 0, sizeA * sizeof(DATA_TYPE));
 
-	cudaMalloc(&dB, sizeB * sizeof(DATA_TYEP));
-	cudaMemset(dB, 0, sizeB * sizeof(DATA_TYEP));
+	cudaMalloc(&dB, sizeB * sizeof(DATA_TYPE));
+	cudaMemset(dB, 0, sizeB * sizeof(DATA_TYPE));
 
-	cudaMalloc(&dC, sizeC * sizeof(DATA_TYEP));
-	cudaMemset(dC, 0, sizeC * sizeof(DATA_TYEP));
+	cudaMalloc(&dC, sizeC * sizeof(DATA_TYPE));
+	cudaMemset(dC, 0, sizeC * sizeof(DATA_TYPE));
 
 	timer.onTimer(1);
 
 	timer.onTimer(4);
-	cudaMemcpy(dA, A, sizeA * sizeof(DATA_TYEP), cudaMemcpyHostToDevice);
-	cudaMemcpy(dB, B, sizeB * sizeof(DATA_TYEP), cudaMemcpyHostToDevice);
+	cudaMemcpy(dA, A, sizeA * sizeof(DATA_TYPE), cudaMemcpyHostToDevice);
+	cudaMemcpy(dB, B, sizeB * sizeof(DATA_TYPE), cudaMemcpyHostToDevice);
 	timer.offTimer(4);
 
 	dim3 gridDim(ceil((float)m / BLOCK_SIZE), ceil((float)n / BLOCK_SIZE));
@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
 	timer.offTimer(2);
 
 	timer.onTimer(5);
-	cudaMemcpy(Cgpu, dC, sizeC * sizeof(DATA_TYEP), cudaMemcpyDeviceToHost);
+	cudaMemcpy(Cgpu, dC, sizeC * sizeof(DATA_TYPE), cudaMemcpyDeviceToHost);
 	timer.offTimer(5);
 
 	timer.offTimer(1);
@@ -133,7 +133,7 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
-bool compareMatrix(DATA_TYEP* _A, DATA_TYEP* _B, int _size)
+bool compareMatrix(DATA_TYPE* _A, DATA_TYPE* _B, int _size)
 {
 	bool isMatched = true;
 	for (int i = 0; i < _size; i++) {
@@ -151,7 +151,7 @@ bool compareMatrix(DATA_TYEP* _A, DATA_TYEP* _B, int _size)
 	return isMatched;
 }
 
-__global__ void MatMul(DATA_TYEP* matA, DATA_TYEP* matB, DATA_TYEP* matC, int m, int n, int k)
+__global__ void MatMul(DATA_TYPE* matA, DATA_TYPE* matB, DATA_TYPE* matC, int m, int n, int k)
 {
 	int row = blockDim.x * blockIdx.x + threadIdx.x;
 	int col = blockDim.y * blockIdx.y + threadIdx.y;
@@ -159,7 +159,7 @@ __global__ void MatMul(DATA_TYEP* matA, DATA_TYEP* matB, DATA_TYEP* matC, int m,
 	if (row >= m || col >= n)
 		return;
 
-	DATA_TYEP val = 0; // hope to use register
+	DATA_TYPE val = 0; // hope to use register
 	for (int i = 0; i < k ; i++)
 		val += KERNEL_MUL(matA[ID2INDEX(row, i, k)], matB[ID2INDEX(i, col, n)]);
 

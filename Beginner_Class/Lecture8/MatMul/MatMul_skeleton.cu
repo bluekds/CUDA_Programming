@@ -7,7 +7,7 @@
 #include <string.h>
 
 #define DO_CPU
-#define DATA_TYEP int
+#define DATA_TYPE int
 
 // Matrix size
 #define SIZE_M (512*2)
@@ -15,12 +15,12 @@
 #define SIZE_K (512*2)
 
 template<class T> void allocNinitMem(T** p, long long size, double* memUsage = NULL);
-bool compareMatrix(DATA_TYEP* _A, DATA_TYEP* _B, int _size);
+bool compareMatrix(DATA_TYPE* _A, DATA_TYPE* _B, int _size);
 
 /******************************************************************
 * Complete this kernels
 ******************************************************************/
-__global__ void MatMul(DATA_TYEP* matA, DATA_TYEP* matB, DATA_TYEP* matC, int m, int n, int k)
+__global__ void MatMul(DATA_TYPE* matA, DATA_TYPE* matB, DATA_TYPE* matC, int m, int n, int k)
 {
 	// Write your kernel here
 }
@@ -48,13 +48,13 @@ int main(int argc, char* argv[])
 	int sizeC = m * n;
 
 	// Make matrix
-	DATA_TYEP* A = NULL, * B = NULL;
-	allocNinitMem<DATA_TYEP>(&A, sizeA);
-	allocNinitMem<DATA_TYEP>(&B, sizeB);
+	DATA_TYPE* A = NULL, * B = NULL;
+	allocNinitMem<DATA_TYPE>(&A, sizeA);
+	allocNinitMem<DATA_TYPE>(&B, sizeB);
 
-	DATA_TYEP* Ccpu = NULL, * Cgpu = NULL;
-	allocNinitMem<DATA_TYEP>(&Ccpu, sizeC);
-	allocNinitMem<DATA_TYEP>(&Cgpu, sizeC);
+	DATA_TYPE* Ccpu = NULL, * Cgpu = NULL;
+	allocNinitMem<DATA_TYPE>(&Ccpu, sizeC);
+	allocNinitMem<DATA_TYPE>(&Cgpu, sizeC);
 
 	// generate input matrices
 	for (int i = 0; i < sizeA; i++) A[i] = ((rand() % 10) + ((rand() % 100) / 100.0));
@@ -77,7 +77,7 @@ int main(int argc, char* argv[])
 	/******************************************************************
 	* Write your codes for GPU algorithm from here
 	******************************************************************/
-	DATA_TYEP* dA, * dB, * dC;
+	DATA_TYPE* dA, * dB, * dC;
 
 	// 1. Allocate device memory for dA, dB, dC
 	// Hint: cudaMalloc, cudaMemset
@@ -132,7 +132,7 @@ int main(int argc, char* argv[])
 
 
 // Utility functions
-bool compareMatrix(DATA_TYEP* _A, DATA_TYEP* _B, int _size)
+bool compareMatrix(DATA_TYPE* _A, DATA_TYPE* _B, int _size)
 {
 	bool isMatched = true;
 	for (int i = 0; i < _size; i++) {
