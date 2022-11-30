@@ -67,17 +67,13 @@ __global__ void matMul_kernel_shared(float* _A, float* _B, float* _C)
 		for (int k = 0; k < K_SIZE; k++)
 			sB[k][col] = _B[col + k * COL_SIZE];
 	}
-	else if (col == 0 ) { // read matrix A
+	if (col == 0 ) { // read matrix A
 		for (int k = 0; k < K_SIZE; k++)
 			sA[row][k] = _A[row * K_SIZE + k];
 
 	}
-	if (row == 0 && col == 0) { // read the first row of A
-		for (int k = 0; k < K_SIZE; k++)
-			sA[row][k] = _A[row * K_SIZE + k];
-	}
 
-	__syncthreads(); // wait until all thread load the matrix
+	__syncthreads(); // wait until all threads load the matrix
 
 	float result = 0;
 	for (int k = 0; k < K_SIZE; k++)
