@@ -11,14 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Book_BJ\Chap10\DS_definitions.h" />
-    <ClInclude Include="..\..\..\..\Book_BJ\Chap10\DS_timer.h" />
+    <ClInclude Include="..\..\..\..\Book_BJ\Chap10\10_1_MatMul_sharedMem_skeleton\DS_definitions.h" />
+    <ClInclude Include="..\..\..\..\Book_BJ\Chap10\10_1_MatMul_sharedMem_skeleton\DS_timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Book_BJ\Chap10\DS_timer.cpp" />
+    <ClCompile Include="..\..\..\..\Book_BJ\Chap10\10_1_MatMul_sharedMem_skeleton\DS_timer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="..\..\..\..\Book_BJ\Chap10\MatMul_sharedMem_skeleton.cu" />
+    <CudaCompile Include="..\..\..\..\Book_BJ\Chap10\10_1_MatMul_sharedMem_skeleton\MatMul_sharedMem_skeleton.cu" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{96415E5F-E9D8-4A05-A2D0-AEDFC695F813}</ProjectGuid>
