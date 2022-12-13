@@ -37,18 +37,18 @@ __global__ void MatMul_SharedMem(DATA_TYPE* matA, DATA_TYPE* matB, DATA_TYPE* ma
 	int localCol = threadIdx.y;
 
 	for (int bID = 0; bID < ceil((float)k / BLOCK_SIZE); bID++) {
-		int stride = bID * BLOCK_SIZE;
+		int offset = bID * BLOCK_SIZE;
 
 		// load A and B
-		if (row >= m || stride + localCol >= k)
+		if (row >= m || offset + localCol >= k)
 			subA[localRow][localCol] = 0;
 		else
-			subA[localRow][localCol] = matA[row * k + (stride + localCol)];
+			subA[localRow][localCol] = matA[row * k + (offset + localCol)];
 
-		if (col >= n || stride + localRow >= k)
+		if (col >= n || offset + localRow >= k)
 			subB[localRow][localCol] = 0;
 		else
-			subB[localRow][localCol] = matB[(stride + localRow) * n + col];
+			subB[localRow][localCol] = matB[(offset + localRow) * n + col];
 
 		__syncthreads();
 

@@ -141,6 +141,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chap10", "Chap10", "{E30E18
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10_1_MatMul_SharedMem_skeleton", "VS2019\Book_BJ\Chap10\10_1_MatMul_SharedMem_skeleton\10_1_MatMul_SharedMem_skeleton.vcxproj", "{96415E5F-E9D8-4A05-A2D0-AEDFC695F813}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10_6_MatMul_SharedMem", "VS2019\Book_BJ\Chap10\10_6_MatMul_SharedMem\10_6_MatMul_SharedMem.vcxproj", "{5EFF6068-FB20-413D-922B-097B00823572}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -419,6 +421,12 @@ Global
 		{96415E5F-E9D8-4A05-A2D0-AEDFC695F813}.Release|x64.ActiveCfg = Release|x64
 		{96415E5F-E9D8-4A05-A2D0-AEDFC695F813}.Release|x64.Build.0 = Release|x64
 		{96415E5F-E9D8-4A05-A2D0-AEDFC695F813}.Release|x86.ActiveCfg = Release|x64
+		{5EFF6068-FB20-413D-922B-097B00823572}.Debug|x64.ActiveCfg = Debug|x64
+		{5EFF6068-FB20-413D-922B-097B00823572}.Debug|x64.Build.0 = Debug|x64
+		{5EFF6068-FB20-413D-922B-097B00823572}.Debug|x86.ActiveCfg = Debug|x64
+		{5EFF6068-FB20-413D-922B-097B00823572}.Release|x64.ActiveCfg = Release|x64
+		{5EFF6068-FB20-413D-922B-097B00823572}.Release|x64.Build.0 = Release|x64
+		{5EFF6068-FB20-413D-922B-097B00823572}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -486,6 +494,7 @@ Global
 		{395AC7FD-9827-4811-AF26-7E1307FD028D} = {85D65ED0-1301-4A36-A391-938C22BC6F81}
 		{E30E18B5-4C18-477A-A096-D9506E0563A3} = {5C5F8058-87FE-4819-9109-A071CD239ED0}
 		{96415E5F-E9D8-4A05-A2D0-AEDFC695F813} = {E30E18B5-4C18-477A-A096-D9506E0563A3}
+		{5EFF6068-FB20-413D-922B-097B00823572} = {E30E18B5-4C18-477A-A096-D9506E0563A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}
