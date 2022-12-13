@@ -77,7 +77,7 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CudaCompile Include="..\..\..\..\Book_BJ\Chap10\10_6_MatMul_SharedMem\MatMul_sharedMem.cu" />
+    <CudaCompile Include="..\..\..\..\Book_BJ\Chap10\10_6_MatMul_SharedMem\10_6.cu" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Book_BJ\Chap10\10_6_MatMul_SharedMem\DS_definitions.h" />
