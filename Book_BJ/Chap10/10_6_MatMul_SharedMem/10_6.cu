@@ -242,7 +242,7 @@ void setTimer()
 	timer.setTimerName(0, (char*)"CPU algorithm");
 	timer.setTimerName(1, (char*)"GPU/CUDA algorithm");
 	timer.setTimerName(3, (char*)" - Kernel (Shared memory)");
-	timer.setTimerName(4, (char*)" - [Data transter] host->device");
+	timer.setTimerName(4, (char*)" - [Data transfer] host->device");
 	timer.setTimerName(5, (char*)" - [Data transfer] device->host");
 	timer.setTimerName(7, (char*)"Kernel (Basic)");
 }
