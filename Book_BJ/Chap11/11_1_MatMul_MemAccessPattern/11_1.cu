@@ -10,7 +10,7 @@
 #define SIZE_N (512*4)
 #define SIZE_K (512*2)
 
-#define BLOCK_SIZE 16
+#define BLOCK_SIZE 32
 
 // kernels
 __global__ void MatMul_xRow(int* matA, int* matB, int* matC, int m, int n, int k)
