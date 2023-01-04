@@ -147,7 +147,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chap11", "Chap11", "{4A5F97
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11_1_MatMul_MemAccessPattern", "VS2019\Book_BJ\Chap11\11_1_MatMul_MemAccessPattern\11_1_MatMul_MemAccessPattern.vcxproj", "{320EF60A-90C8-4176-8380-3F0FF55EF686}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11_4_BankConflict", "VS2019\Book_BJ\Chap11\11_4_BankConflict\11_4_BankConflict.vcxproj", "{07EE431F-F2F7-461F-8E16-1760F452B8DA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11_5_BankConflict", "VS2019\Book_BJ\Chap11\11_5_BankConflict\11_5_BankConflict.vcxproj", "{07EE431F-F2F7-461F-8E16-1760F452B8DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

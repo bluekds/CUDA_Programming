@@ -11,14 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="..\..\..\..\Book_BJ\Chap11\11_4_BankConflict\11_4.cu" />
+    <ClInclude Include="..\..\..\..\Book_BJ\Chap11\11_5_BankConflict\DS_definitions.h" />
+    <ClInclude Include="..\..\..\..\Book_BJ\Chap11\11_5_BankConflict\DS_timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Book_BJ\Chap11\11_4_BankConflict\DS_definitions.h" />
-    <ClInclude Include="..\..\..\..\Book_BJ\Chap11\11_4_BankConflict\DS_timer.h" />
+    <ClCompile Include="..\..\..\..\Book_BJ\Chap11\11_5_BankConflict\DS_timer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Book_BJ\Chap11\11_4_BankConflict\DS_timer.cpp" />
+    <CudaCompile Include="..\..\..\..\Book_BJ\Chap11\11_5_BankConflict\11_5.cu" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{07EE431F-F2F7-461F-8E16-1760F452B8DA}</ProjectGuid>
