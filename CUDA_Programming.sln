@@ -147,6 +147,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chap11", "Chap11", "{4A5F97
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11_1_MatMul_MemAccessPattern", "VS2019\Book_BJ\Chap11\11_1_MatMul_MemAccessPattern\11_1_MatMul_MemAccessPattern.vcxproj", "{320EF60A-90C8-4176-8380-3F0FF55EF686}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11_4_BankConflict", "VS2019\Book_BJ\Chap11\11_4_BankConflict\11_4_BankConflict.vcxproj", "{07EE431F-F2F7-461F-8E16-1760F452B8DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -437,6 +439,12 @@ Global
 		{320EF60A-90C8-4176-8380-3F0FF55EF686}.Release|x64.ActiveCfg = Release|x64
 		{320EF60A-90C8-4176-8380-3F0FF55EF686}.Release|x64.Build.0 = Release|x64
 		{320EF60A-90C8-4176-8380-3F0FF55EF686}.Release|x86.ActiveCfg = Release|x64
+		{07EE431F-F2F7-461F-8E16-1760F452B8DA}.Debug|x64.ActiveCfg = Debug|x64
+		{07EE431F-F2F7-461F-8E16-1760F452B8DA}.Debug|x64.Build.0 = Debug|x64
+		{07EE431F-F2F7-461F-8E16-1760F452B8DA}.Debug|x86.ActiveCfg = Debug|x64
+		{07EE431F-F2F7-461F-8E16-1760F452B8DA}.Release|x64.ActiveCfg = Release|x64
+		{07EE431F-F2F7-461F-8E16-1760F452B8DA}.Release|x64.Build.0 = Release|x64
+		{07EE431F-F2F7-461F-8E16-1760F452B8DA}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -507,6 +515,7 @@ Global
 		{5EFF6068-FB20-413D-922B-097B00823572} = {E30E18B5-4C18-477A-A096-D9506E0563A3}
 		{4A5F9704-2947-4C1B-B710-D61662B8F8B4} = {5C5F8058-87FE-4819-9109-A071CD239ED0}
 		{320EF60A-90C8-4176-8380-3F0FF55EF686} = {4A5F9704-2947-4C1B-B710-D61662B8F8B4}
+		{07EE431F-F2F7-461F-8E16-1760F452B8DA} = {4A5F9704-2947-4C1B-B710-D61662B8F8B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}
