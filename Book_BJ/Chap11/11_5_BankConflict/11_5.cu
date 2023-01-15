@@ -16,7 +16,7 @@
 #define INDEX2COL(_index,_width)	((_index)%(_width))
 #define ID2INDEX(_row,_col, _width) (((_row)*(_width))+(_col))
 
-#define BLOCK_SIZE 16
+#define BLOCK_SIZE 32
 
 // macro function
 #define IS_EQUAL(_a, _b) (abs(_b - _a) < 10e-6)
