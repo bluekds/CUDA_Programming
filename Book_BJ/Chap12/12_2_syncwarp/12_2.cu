@@ -8,14 +8,14 @@ __global__ void syncWarp_test()
 {
     int tID = threadIdx.x;
     int warpID = (int)(tID / 32);
-    __shared__ int a[BLOCK_SIZE/32];
+    __shared__ int masterID[BLOCK_SIZE/32];
 
     if (threadIdx.x % 32 == 0) {
-        a[warpID] = tID;
+        masterID[warpID] = tID;
     }
     __syncwarp(); // intra-warp synchronization (barrier)
 
-    printf("[%d] warp = %d\n", tID, a[warpID]);
+    printf("[t%d] The master of our warp is t%d\n", tID, masterID[warpID]);
 }
 
 int main()
