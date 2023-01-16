@@ -34,14 +34,39 @@ __global__ void threadCounting_atomicShared(int* a)
 		atomicAdd(a, sa);
 }
 
+__global__ void threadCounting_warpLvSync(int* a)
+{
+	__shared__ int wa[NUM_T_IN_B / 32];
+	__shared__ int sa;
+
+	int warpID = (int)threadIdx.x / 32;
+
+	if (threadIdx.x % 32 == 0)
+		wa[warpID] = 0;
+	__syncwarp();
+
+	atomicAdd(&wa[warpID], 1);
+
+	__syncwarp();
+
+	if (threadIdx.x % 32 == 0)
+		atomicAdd(&sa, wa[warpID]);
+
+	__syncthreads();
+
+	if (threadIdx.x == 0)
+		atomicAdd(a, sa);
+}
+
 int main(void) {
 	DS_timer timer(10);
 	timer.setTimerName(0, (char*)"No Sync.");
 	timer.setTimerName(1, (char*)"AtomicGlobal");
 	timer.setTimerName(2, (char*)"AtomicShared");
+	timer.setTimerName(3, (char*)"AtomicWarp");
 
 	int a = 0;
-	int* d1, * d2, * d3;
+	int* d1, * d2, * d3, *d4;
 
 	//cudaSetDevice(1);
 
@@ -52,6 +77,9 @@ int main(void) {
 	cudaMemset(d2, 0, sizeof(int) * 0);
 
 	cudaMalloc((void**)&d3, sizeof(int));
+	cudaMemset(d3, 0, sizeof(int) * 0);
+
+	cudaMalloc((void**)&d4, sizeof(int));
 	cudaMemset(d3, 0, sizeof(int) * 0);
 
 	// warp-up
@@ -82,9 +110,18 @@ int main(void) {
 	cudaMemcpy(&a, d3, sizeof(int), cudaMemcpyDeviceToHost);
 	printf("[AtomicShared] # of threads = %d\n", a);
 
+	timer.onTimer(3);
+	threadCounting_atomicShared << <NUM_BLOCK, NUM_T_IN_B >> > (d4);
+	cudaDeviceSynchronize();
+	timer.offTimer(3);
+
+	cudaMemcpy(&a, d4, sizeof(int), cudaMemcpyDeviceToHost);
+	printf("[AtomicWarp] # of threads = %d\n", a);
+
 	cudaFree(d1);
 	cudaFree(d2);
 	cudaFree(d3);
+	cudaFree(d4);
 
 	timer.printTimer();
 
