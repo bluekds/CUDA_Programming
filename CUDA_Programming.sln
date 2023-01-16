@@ -153,6 +153,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chap12", "Chap12", "{6F97ED
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12_2_syncwarp", "VS2019\Book_BJ\Chap12\12_2_syncwarp\12_2_syncwarp.vcxproj", "{661675D8-03C1-45AA-858D-168BE3815621}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12_6_threadCounting", "VS2019\Book_BJ\Chap12\12_6_threadCounting\12_6_threadCounting.vcxproj", "{C07DAF6D-4A20-4BEE-8814-5E5D596583EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -455,6 +457,12 @@ Global
 		{661675D8-03C1-45AA-858D-168BE3815621}.Release|x64.ActiveCfg = Release|x64
 		{661675D8-03C1-45AA-858D-168BE3815621}.Release|x64.Build.0 = Release|x64
 		{661675D8-03C1-45AA-858D-168BE3815621}.Release|x86.ActiveCfg = Release|x64
+		{C07DAF6D-4A20-4BEE-8814-5E5D596583EC}.Debug|x64.ActiveCfg = Debug|x64
+		{C07DAF6D-4A20-4BEE-8814-5E5D596583EC}.Debug|x64.Build.0 = Debug|x64
+		{C07DAF6D-4A20-4BEE-8814-5E5D596583EC}.Debug|x86.ActiveCfg = Debug|x64
+		{C07DAF6D-4A20-4BEE-8814-5E5D596583EC}.Release|x64.ActiveCfg = Release|x64
+		{C07DAF6D-4A20-4BEE-8814-5E5D596583EC}.Release|x64.Build.0 = Release|x64
+		{C07DAF6D-4A20-4BEE-8814-5E5D596583EC}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -528,6 +536,7 @@ Global
 		{07EE431F-F2F7-461F-8E16-1760F452B8DA} = {4A5F9704-2947-4C1B-B710-D61662B8F8B4}
 		{6F97EDD8-B0BD-4265-97A4-E783B011FA37} = {5C5F8058-87FE-4819-9109-A071CD239ED0}
 		{661675D8-03C1-45AA-858D-168BE3815621} = {6F97EDD8-B0BD-4265-97A4-E783B011FA37}
+		{C07DAF6D-4A20-4BEE-8814-5E5D596583EC} = {6F97EDD8-B0BD-4265-97A4-E783B011FA37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}
