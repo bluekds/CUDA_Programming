@@ -9,7 +9,7 @@
 #define NUM_BLOCK (128*1024)
 #define ARRAY_SIZE (1024*NUM_BLOCK)
 
-#define NUM_STREAMS 2
+#define NUM_STREAMS 4
 
 #define WORK_LOAD 256
 
@@ -28,6 +28,14 @@ __global__ void myKernel(int* _in, int* _out)
 
 void main(void)
 {
+	cudaDeviceProp deviceProp;
+	cudaGetDeviceProperties(&deviceProp, 0);
+
+	printf(
+		"  Concurrent copy and kernel execution:          %s with %d copy "
+		"engine(s)\n",
+		(deviceProp.deviceOverlap ? "Yes" : "No"), deviceProp.asyncEngineCount);
+
 	DS_timer timer(10);
 	timer.setTimerName(0, "Single stream");
 	timer.setTimerName(1, "  * Host -> Device");
@@ -84,7 +92,17 @@ void main(void)
 	{
 		int offset = chunkSize * i;
 		cudaMemcpyAsync(dIn + offset, in + offset, sizeof(int) * chunkSize, cudaMemcpyHostToDevice, stream[i]);
-		myKernel <<<NUM_BLOCK / NUM_STREAMS, 1024, 0, stream[i] >> > (dIn + offset, dOut + offset);
+	}
+
+	for (int i = 0; i < NUM_STREAMS; i++)
+	{
+		int offset = chunkSize * i;
+		myKernel << <NUM_BLOCK / NUM_STREAMS, 1024, 0, stream[i] >> > (dIn + offset, dOut + offset);
+	}
+
+	for (int i = 0; i < NUM_STREAMS; i++)
+	{
+		int offset = chunkSize * i;
 		cudaMemcpyAsync(out2 + offset, dOut + offset, sizeof(int) * chunkSize, cudaMemcpyDeviceToHost, stream[i]);
 	}
 
