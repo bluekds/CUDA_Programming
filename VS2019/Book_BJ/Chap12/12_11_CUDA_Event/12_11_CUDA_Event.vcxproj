@@ -11,18 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="..\..\..\..\Book_BJ\Chap12\12_9_multi_stream\12_9.cu" />
+    <CudaCompile Include="..\..\..\..\Book_BJ\Chap12\12_11_CUDA_Event\12_11.cu" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Book_BJ\Chap12\12_9_multi_stream\DS_definitions.h" />
-    <ClInclude Include="..\..\..\..\Book_BJ\Chap12\12_9_multi_stream\DS_timer.h" />
+    <ClInclude Include="..\..\..\..\Book_BJ\Chap12\12_11_CUDA_Event\DS_definitions.h" />
+    <ClInclude Include="..\..\..\..\Book_BJ\Chap12\12_11_CUDA_Event\DS_timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Book_BJ\Chap12\12_9_multi_stream\DS_timer.cpp" />
+    <ClCompile Include="..\..\..\..\Book_BJ\Chap12\12_11_CUDA_Event\DS_timer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{19AA2AE1-5048-41DA-9902-BA49C1F01508}</ProjectGuid>
-    <RootNamespace>_12_9_multi_stream</RootNamespace>
+    <ProjectGuid>{F68B0724-486E-4D80-BA85-C89B2D8A4B25}</ProjectGuid>
+    <RootNamespace>_12_11_CUDA_Event</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -74,7 +74,6 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <OpenMPSupport>false</OpenMPSupport>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -85,9 +84,6 @@
     </Link>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
-      <CodeGeneration>compute_75,sm_75</CodeGeneration>
-      <AdditionalCompilerOptions>
-      </AdditionalCompilerOptions>
     </CudaCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
