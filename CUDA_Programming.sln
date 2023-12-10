@@ -163,6 +163,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12_12_MultiGPU", "VS2019\Bo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12_14_HetergeneousComputing", "VS2019\Book_BJ\Chap12\12_14_HetergeneousComputing\12_14_HetergeneousComputing.vcxproj", "{B803E594-E9B4-4429-A9BD-6B417DBDB0A5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{DB15627E-E187-4576-A019-81F0C924F2F8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Trapezoidal", "VS2019\Examples\Trapezoidal\Trapezoidal.vcxproj", "{4CF254C4-8DDC-4960-A00F-9BDEC6E42093}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -495,6 +499,12 @@ Global
 		{B803E594-E9B4-4429-A9BD-6B417DBDB0A5}.Release|x64.ActiveCfg = Release|x64
 		{B803E594-E9B4-4429-A9BD-6B417DBDB0A5}.Release|x64.Build.0 = Release|x64
 		{B803E594-E9B4-4429-A9BD-6B417DBDB0A5}.Release|x86.ActiveCfg = Release|x64
+		{4CF254C4-8DDC-4960-A00F-9BDEC6E42093}.Debug|x64.ActiveCfg = Debug|x64
+		{4CF254C4-8DDC-4960-A00F-9BDEC6E42093}.Debug|x64.Build.0 = Debug|x64
+		{4CF254C4-8DDC-4960-A00F-9BDEC6E42093}.Debug|x86.ActiveCfg = Debug|x64
+		{4CF254C4-8DDC-4960-A00F-9BDEC6E42093}.Release|x64.ActiveCfg = Release|x64
+		{4CF254C4-8DDC-4960-A00F-9BDEC6E42093}.Release|x64.Build.0 = Release|x64
+		{4CF254C4-8DDC-4960-A00F-9BDEC6E42093}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -573,6 +583,7 @@ Global
 		{F68B0724-486E-4D80-BA85-C89B2D8A4B25} = {6F97EDD8-B0BD-4265-97A4-E783B011FA37}
 		{D75F1B6F-B6CD-4C5F-8188-E910184753F0} = {6F97EDD8-B0BD-4265-97A4-E783B011FA37}
 		{B803E594-E9B4-4429-A9BD-6B417DBDB0A5} = {6F97EDD8-B0BD-4265-97A4-E783B011FA37}
+		{4CF254C4-8DDC-4960-A00F-9BDEC6E42093} = {DB15627E-E187-4576-A019-81F0C924F2F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52DE253B-6715-4A93-BA27-7131973681F9}
