@@ -41,6 +41,10 @@ __global__ void threadCounting_warpLvSync(int* a)
 
 	int warpID = (int)threadIdx.x / 32;
 
+	if (threadIdx.x == 0)
+		sa = 0;
+	__syncthreads();
+
 	if (threadIdx.x % 32 == 0)
 		wa[warpID] = 0;
 	__syncwarp();
@@ -111,7 +115,7 @@ int main(void) {
 	printf("[AtomicShared] # of threads = %d\n", a);
 
 	timer.onTimer(3);
-	threadCounting_atomicShared << <NUM_BLOCK, NUM_T_IN_B >> > (d4);
+	threadCounting_warpLvSync << <NUM_BLOCK, NUM_T_IN_B >> > (d4);
 	cudaDeviceSynchronize();
 	timer.offTimer(3);
 
